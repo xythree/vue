@@ -7,6 +7,8 @@ __inline("addressList.js")
 
 __inline("moreList.js")
 
+__inline("alertBox.js")
+
 
 var vm = new Vue({
     el: "body",
@@ -51,7 +53,7 @@ var vm = new Vue({
     events: {
         showHome() {
             var arr = []
-            for (var i = 0; i < 15; i++) {
+            for (var i = 0; i < 60; i++) {
                 arr.push({ src: "", content: i })
             }
             this.$broadcast("homeData", arr)
@@ -62,6 +64,9 @@ var vm = new Vue({
                 arr.push({ content: i })
             }
             this.$broadcast("addressListData", arr)
+        },
+        showAlertBox(d) {
+            this.$broadcast("showAlertBox", d)
         }
     },
     ready() {
