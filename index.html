@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+    <title></title>
+
+    <link rel="stylesheet" href="/static/css/main.css">
+
+</head>
+
+<body>
+
+
+    <morelistbox></morelistbox>
+    <div class="iwrap" :class="{'right-transition': rightTransition}" :style="iwrapStyle" >
+
+        <div class="ihead_box">
+            <div class="ihead_child imore" @click="showMore" >more</div>
+            <div class="ihead_child ititle">{{title}}</div>
+            <div class="ihead_child icenter">center</div>
+        </div>
+
+        <div class="ibody_box" :style="bodyStyle">
+            <homebox v-show="home"></homebox>
+            <addresslistbox v-show="addressList"></addresslistbox>
+        </div>
+
+        <div class="ifoot_box">
+            <div @click="iconToggle($index)" :class="{'icon': true, 'icon_index': $index == iconIndex}" v-for="icon in iconData">{{icon}}</div>
+        </div>
+
+    </div>
+
+    <script src="/static/scripts/vue.min.js"></script>
+    <script src="/component/main.js"></script>
+  
+
+</body>
+
+</html>
+
+
+
+
+
