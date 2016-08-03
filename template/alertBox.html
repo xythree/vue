@@ -1,7 +1,7 @@
 
 
 
-
+<div class="ialert_box_bg" v-show="alertData.alertShow" ></div>
 <div class="ialert_box" v-show="alertData.alertShow" transition="scale" >
   <h4 class="ialert_box_title">{{alertData.title}}</h4>
   <div class="ialert_box_content">
@@ -12,6 +12,9 @@
     <a href="javascript:;" class="sure" @click="sure" >确定</a>
   </div>
 </div>
+
+
+
 
 
 

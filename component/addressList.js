@@ -1,7 +1,7 @@
 
 
 
-var addressList = Vue.extend({
+var addressListBox = Vue.extend({
     data() {
         return {
             addressListData: {}
@@ -16,5 +16,5 @@ var addressList = Vue.extend({
 })
 
 
-Vue.component("addresslistbox", addressList)
+Vue.component("addresslistbox", addressListBox)
 

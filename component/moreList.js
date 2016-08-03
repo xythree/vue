@@ -1,7 +1,7 @@
 
 
 
-var morelist = Vue.extend({
+var morelistBox = Vue.extend({
     data() {
         return {
             moreListData: [
@@ -20,7 +20,7 @@ var morelist = Vue.extend({
     template: __inline("../template/moreList.html")
 })
 
-Vue.component("morelistbox", morelist)
+Vue.component("morelistbox", morelistBox)
 
 
 

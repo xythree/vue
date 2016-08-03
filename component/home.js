@@ -1,12 +1,12 @@
 
 
-var home = Vue.extend({
+var homeBox = Vue.extend({
     props: {
 
     },
     data() {
         return {
-            loadingStatus: false,      
+            homeLoadingStatus: false,      
             homeData: []
         }
     },
@@ -16,23 +16,28 @@ var home = Vue.extend({
         }
     },
     methods: {
-        alert(d) {            
-            d.alertShow = true
-            this.$dispatch("showAlertBox", d)
+        alert(d) {
+            var _t = this    
+            this.$dispatch("showLoading")
+            setTimeout(function () {
+                _t.$dispatch("showLoading")
+                d.alertShow = true
+                _t.$dispatch("showAlertBox", d)
+            }, 3000)
         },  
         scroll() {
             var _t = this
             
             if (this.$el.scrollTop + this.$el.offsetHeight + 50 >= this.$el.firstElementChild.offsetHeight) {
                 clearTimeout(this.timer)
-                this.loadingStatus = true
+                this.homeLoadingStatus = true
 
                 this.timer = setTimeout(function () {
 
                     for (var i = _t.homeData.length, len = i + 15; i < len; i++) {
                         _t.homeData.push({ src: "", content: i })
                     }
-                    _t.loadingStatus = false
+                    _t.homeLoadingStatus = false
 
                 }, 300)
             }
@@ -45,7 +50,7 @@ var home = Vue.extend({
 })
 
 
-Vue.component("homebox", home)
+Vue.component("homebox", homeBox)
 
 
 
