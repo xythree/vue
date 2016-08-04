@@ -12,6 +12,12 @@ var morelistBox = Vue.extend({
             ]
         }
     },
+    methods: {
+        listClick() {
+            this.$parent.$refs.photolistbox.$dispatch("showPhotosListBox")
+            this.$dispatch("showMore")
+        }
+    },
     events: {
         moreListData(d) {
             this.moreListData = d

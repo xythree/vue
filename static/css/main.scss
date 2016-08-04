@@ -41,6 +41,7 @@ body {
     transform: translateX(70%);
 }
 
+
 .ihead_box {
     display: flex;
     height: 40px;
@@ -107,6 +108,7 @@ body {
     }
 }
 
+.iphotos_list_box,
 .center_box {
     position: absolute;
     top: 0;
@@ -126,6 +128,18 @@ body {
     transform: translateX(100%);
     opacity: 0;
 }
+
+.back-transition {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all .5s ease-out;
+}
+.back-enter {}
+.back-leave {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
 
 
 .ialert_box_bg {

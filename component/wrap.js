@@ -3,6 +3,7 @@ var wrapBox = Vue.extend({
     template: __inline("/template/wrap.html"),
     data() {
         return {
+            abc: { a: 1, b: 2 },
             home: true,
             addressList: false,
             set: false,
@@ -20,7 +21,7 @@ var wrapBox = Vue.extend({
             this.$broadcast("centerShow")
         },
         showMore() {
-            this.rightTransition = !this.rightTransition
+            this.$emit("showMore")
         },
         iconToggle(index) {
 
@@ -49,6 +50,9 @@ var wrapBox = Vue.extend({
         }
     },
     events: {
+        showMore() {
+            this.rightTransition = !this.rightTransition
+        },
         showHome() {
             var arr = []
             for (var i = 0; i < 60; i++) {

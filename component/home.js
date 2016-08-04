@@ -17,7 +17,7 @@ var homeBox = Vue.extend({
     },
     methods: {
         alert(d) {
-            var _t = this    
+            var _t = this
             this.$dispatch("showLoading")
             setTimeout(function () {
                 _t.$dispatch("showLoading")
@@ -44,7 +44,7 @@ var homeBox = Vue.extend({
         }
     },
     ready() {
-
+        
     },
     template: __inline("../template/home.html")
 })
