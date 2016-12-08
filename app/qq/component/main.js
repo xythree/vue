@@ -23,7 +23,7 @@ Vue.component("photoajax", function (resolve, reject) {
     var _t = this
 
     this.$dispatch("showLoading")
-
+    
     setTimeout(function () {
         resolve({
             template: "<p>ajax back content</p>"
