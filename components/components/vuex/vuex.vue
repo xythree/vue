@@ -5,14 +5,13 @@
 	
 	<div>
 		<div @click="aa">vuex: {{val}}</div>	
-		<input type="text" v-model="a" />			
+		<input type="text" v-model="a" />
 	</div>
 
 </template>
 
 
 <script>
-import Vue from "vue"
 //import store from "../../vuex/store"
 //import { getCount } from "../../vuex/getters"
 //import * as actions from "../../vuex/actions"
