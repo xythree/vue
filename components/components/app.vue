@@ -18,7 +18,9 @@
         <br />
         <circle_box></circle_box>
         
-        
+        <br />
+		
+		<calendar_box></calendar_box>
         
         
     </div>
@@ -37,6 +39,7 @@ import city_box from "./city/city.vue"
 import table_box from "./table/table.vue"
 import page_box from "./page/page.vue"
 import circle_box from "./circle/circle.vue"
+import calendar_box from "./calendar/calendar.vue"
 
 import vuex_box from "./vuex/vuex.vue"
 
@@ -82,7 +85,8 @@ export default {
         table_box,
         page_box,
         vuex_box,
-        circle_box
+        circle_box,
+		calendar_box
     }
 }
 

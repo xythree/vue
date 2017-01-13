@@ -9,10 +9,12 @@ import * as getters from "./getters"
 Vue.use(Vuex)
 
 
+
+
 export default new Vuex.Store({
 	mutations: {
 		ADD(state, mutation) {
-			state.count += mutation.amount 		
+			state.count += mutation.amount
 		},
 		MIN(state, amount) {
 			state.count -= amount
