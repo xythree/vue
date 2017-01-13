@@ -70,11 +70,10 @@
 </template>
 
 
-
-
 <script>
 
 export default {
+    props: ["defaultTime"],
     data() {
         return {
             weeks: ["日","一","二","三","四","五","六"],
@@ -85,7 +84,11 @@ export default {
     },
     computed: {
        date() {
-           return this.getDate()
+           if (this.defaultTime) {
+               var defaultTime = this.defaultTime.split(/[\,,\-,\/]/)
+               return this.getDate(defaultTime[0], defaultTime[1] - 1, defaultTime[2])
+           }
+           return this.getDate() 
        }
     },
     methods: {
@@ -98,7 +101,7 @@ export default {
         getDate(y, m, d) {
             var date
             if (arguments.length) {
-                date = new Date(y, m, d)
+                date = new Date(y, +m, d)
             } else {
                 date = new Date()
             }

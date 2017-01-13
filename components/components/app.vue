@@ -19,8 +19,8 @@
         <circle_box></circle_box>
         
         <br />
-		
-		<calendar_box></calendar_box>
+        
+        <calendar_box :defaultTime="time" ></calendar_box>
         
         
     </div>
@@ -46,6 +46,7 @@ import vuex_box from "./vuex/vuex.vue"
 export default {
     data() {
         return {
+            time: "2016/2/11",
             selectList: [
                 {name: "北京"},
                 {name: "深圳"}
@@ -86,7 +87,7 @@ export default {
         page_box,
         vuex_box,
         circle_box,
-		calendar_box
+        calendar_box
     }
 }
 
