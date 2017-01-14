@@ -73,11 +73,11 @@
 <script>
 
 export default {
-    props: ["defaultTime"],
+    props: ["defaultTime", "resultVal"],
     data() {
         return {
             weeks: ["日","一","二","三","四","五","六"],
-            d: [],          
+            d: [],
             d2: {},
             dw: []
         }
@@ -89,7 +89,10 @@ export default {
                return this.getDate(defaultTime[0], defaultTime[1] - 1, defaultTime[2])
            }
            return this.getDate() 
-       }
+       },
+	   getCalendarVal() {
+		   return this.$store.getters.getCalendarVal
+	   }
     },
     methods: {
         getD(date) {
@@ -123,7 +126,14 @@ export default {
             this.renderDate()
         },
         getVal(index) {
-            alert("选择的日期: " + this.resultDate(index).join("-"))
+			
+			/*
+            this.$store.dispatch("getCalendarVal", {
+				calendarVal: this.resultDate(index).join("-")
+			})
+			*/
+
+			this.resultVal = this.resultDate(index).join("-")
         },
         resultDate(index) {
             return [this.d.y, this.d.m, index || this.date.d]

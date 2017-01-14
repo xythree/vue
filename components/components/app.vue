@@ -8,6 +8,8 @@
         
         <city_box :cityList="cityList"></city_box>
         
+		<calendar_box2 :defaultTime="time" ></calendar_box2>
+		
         <table_box></table_box>
         
         <page_box></page_box>
@@ -40,6 +42,7 @@ import table_box from "./table/table.vue"
 import page_box from "./page/page.vue"
 import circle_box from "./circle/circle.vue"
 import calendar_box from "./calendar/calendar.vue"
+import calendar_box2 from "./calendar/calendar2.vue"
 
 import vuex_box from "./vuex/vuex.vue"
 
@@ -87,7 +90,8 @@ export default {
         page_box,
         vuex_box,
         circle_box,
-        calendar_box
+        calendar_box,
+        calendar_box2
     }
 }
 

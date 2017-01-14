@@ -17,6 +17,9 @@ export default new Vuex.Store({
 		},
 		MIN(state, amount) {
 			state.count -= amount
+		},
+		getCalendarVal(state, mutation) {			
+			state.calendarVal = mutation.calendarVal
 		}
 	},
 	state,
